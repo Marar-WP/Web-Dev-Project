@@ -9,9 +9,9 @@ This project is a web application built with Angular and Django REST Framework. 
 - Leave reviews
 
 ## Team Members
-- Marat Irgaleyev 24B031043
-- Teammate 1
-- Teammate 2
+- Marat Irgaleyev 
+- Omirzak Yerbolsyn
+- Abildayev Tamerlan
 
 ## Technologies
 - Angular
