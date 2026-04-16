@@ -1,0 +1,26 @@
+# --- Frontend (Angular) ---
+frontend/dist/
+frontend/tmp/
+frontend/out-tsc/
+frontend/node_modules/
+frontend/.angular/
+frontend/.vscode/
+frontend/coverage/
+
+# --- Backend (Django) ---
+backend/venv/
+backend/.venv/
+backend/db.sqlite3
+backend/__pycache__/
+backend/*/__pycache__/
+backend/*.pyc
+backend/media/
+backend/staticfiles/
+
+# --- IDEs and System ---
+.idea/
+.vscode/
+.history/
+*.log
+.DS_Store
+Thumbs.db
