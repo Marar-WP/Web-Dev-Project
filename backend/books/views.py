@@ -39,6 +39,13 @@ from rest_framework import viewsets, permissions, status, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from rest_framework.authentication import SessionAuthentication
+
+class CsrfExemptSessionAuthentication(SessionAuthentication):
+    def enforce_csrf(self, request):
+        return
 
 from .models import Category, Author, Book, Review
 from .serializers import (
@@ -75,7 +82,7 @@ class AuthorViewSet(viewsets.ModelViewSet):
     search_fields = ['first_name', 'last_name', 'bio']
     ordering_fields = ['last_name', 'first_name']
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class BookViewSet(viewsets.ModelViewSet):
     """
     ViewSet для книг.
@@ -137,7 +144,14 @@ class BookViewSet(viewsets.ModelViewSet):
     # @action — создаём нестандартные эндпоинты
     # detail=True  → /api/books/{id}/reviews/
     # detail=False → /api/books/popular/
-    @action(detail=True, methods=['get', 'post'], url_path='reviews')
+    @action(
+    detail=True,
+    methods=['get', 'post'],
+    url_path='reviews',
+    authentication_classes=[CsrfExemptSessionAuthentication],
+    permission_classes=[permissions.AllowAny],
+)
+
     def reviews(self, request, pk=None):
         """
         GET  /api/books/{id}/reviews/ — получить рецензии книги

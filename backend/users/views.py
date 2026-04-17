@@ -15,6 +15,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 from .serializers import UserRegistrationSerializer, UserSerializer
 
 
@@ -59,12 +60,10 @@ def login_view(request):
         )
 
 
-@api_view(['POST'])
+@api_view(['GET'])
 def logout_view(request):
-
     logout(request)
     return Response({'detail': 'Вы успешно вышли из системы'})
-
 
 @api_view(['GET', 'PUT'])
 @permission_classes([permissions.IsAuthenticated])

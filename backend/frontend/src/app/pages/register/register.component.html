@@ -1,0 +1,23 @@
+<section class="card stack" style="max-width:520px;margin:0 auto;">
+  <h1>Register</h1>
+  <div>
+    <label class="label">Username</label>
+    <input class="input" [(ngModel)]="username">
+  </div>
+  <div>
+    <label class="label">Email</label>
+    <input class="input" [(ngModel)]="email">
+  </div>
+  <div>
+    <label class="label">Password</label>
+    <input class="input" type="password" [(ngModel)]="password">
+  </div>
+  <div>
+    <label class="label">Repeat password</label>
+    <input class="input" type="password" [(ngModel)]="password2">
+  </div>
+  <div>
+    <button class="btn" (click)="submit()">Register</button>
+  </div>
+  <p *ngIf="message">{{ message }}</p>
+</section>

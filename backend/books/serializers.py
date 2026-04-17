@@ -34,7 +34,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         model = Review
         fields = ['id', 'book', 'user', 'username', 'rating', 'text', 'created_at']
 
-        read_only_fields = ['user', 'created_at']
+        read_only_fields = ['book', 'user', 'created_at']
 
     def create(self, validated_data):
 
