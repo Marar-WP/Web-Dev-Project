@@ -1,13 +1,26 @@
 <header class="header">
   <div class="container header-inner">
-    <a routerLink="/" class="brand">Book Library</a>
+    <a routerLink="/" class="brand-wrap">
+      <span class="brand-mark">📚</span>
+      <span>
+        <span class="brand">Book Library</span>
+        <span class="brand-subtitle">Discover, review and explore books</span>
+      </span>
+    </a>
+
     <nav class="nav">
-      <a routerLink="/">Home</a>
-      <a routerLink="/books">Books</a>
-      <a routerLink="/login">Login</a>
-      <a routerLink="/register">Register</a>
-      <a routerLink="/profile">Profile</a>
-      <button class="logout" (click)="logout()">Logout</button>
+      <a routerLink="/" class="nav-link">Home</a>
+      <a routerLink="/books" class="nav-link">Books</a>
+
+      <ng-container *ngIf="!isAuthenticated; else userMenu">
+        <a routerLink="/login" class="nav-link">Login</a>
+        <a routerLink="/register" class="nav-cta">Register</a>
+      </ng-container>
+
+      <ng-template #userMenu>
+        <a routerLink="/profile" class="nav-link">{{ username || 'Profile' }}</a>
+        <button class="logout" type="button" (click)="logout()">Logout</button>
+      </ng-template>
     </nav>
   </div>
 </header>

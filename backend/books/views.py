@@ -115,8 +115,14 @@ class BookViewSet(viewsets.ModelViewSet):
             # Проверяем авторизацию
             if not request.user.is_authenticated:
                 return Response(
-                    {'detail': 'Необходима авторизация'},
+                    {'detail': 'Login is required to leave a review.'},
                     status=status.HTTP_401_UNAUTHORIZED
+                )
+
+            if Review.objects.filter(book=book, user=request.user).exists():
+                return Response(
+                    {'detail': 'You have already left a review for this book.'},
+                    status=status.HTTP_400_BAD_REQUEST
                 )
 
             serializer = ReviewSerializer(

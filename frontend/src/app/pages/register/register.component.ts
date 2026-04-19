@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../../core/services/api.service';
+import { AuthStateService } from '../../core/services/auth-state.service';
 
 @Component({
   selector: 'app-register-page',
@@ -13,6 +14,7 @@ import { ApiService } from '../../core/services/api.service';
 export class RegisterPageComponent {
   private api = inject(ApiService);
   private router = inject(Router);
+  private authState = inject(AuthStateService);
 
   username = '';
   email = '';
@@ -34,11 +36,13 @@ export class RegisterPageComponent {
       password: this.password,
       password2: this.password2
     }).subscribe({
-      next: () => {
-        this.router.navigateByUrl('/login');
+      next: (user) => {
+        this.authState.setUser(user);
+        this.router.navigateByUrl('/profile');
       },
-      error: () => {
-        this.message = 'Registration failed.';
+      error: (error) => {
+        const firstError = error?.error ? JSON.stringify(error.error) : '';
+        this.message = firstError || 'Registration failed. Please use a stronger password.';
       }
     });
   }

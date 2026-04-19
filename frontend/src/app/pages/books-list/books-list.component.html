@@ -1,23 +1,83 @@
-<section class="stack">
-  <div class="card">
-    <h1>Books</h1>
-    <p class="muted">All books from the backend.</p>
+<section class="stack page-section">
+  <div class="card page-banner">
+    <div>
+      <span class="eyebrow">Catalog</span>
+      <h1>Books</h1>
+      <p class="muted">Search the collection, filter by category and explore detailed pages.</p>
+    </div>
   </div>
 
-  <div *ngIf="loading" class="card">Loading books...</div>
-  <div *ngIf="error" class="card error">{{ error }}</div>
+  <section class="catalog-layout">
+    <aside class="card filters-panel stack">
+      <div class="filters-header">
+        <div>
+          <h2>Filters</h2>
+          <p class="muted">Keep it simple and focused.</p>
+        </div>
+        <button class="btn secondary" type="button" (click)="resetFilters()">Reset</button>
+      </div>
 
-  <div class="grid grid-3" *ngIf="!loading && !error">
-    <article class="card stack" *ngFor="let book of books">
-      <div>
-        <h3>{{ book.title }}</h3>
-        <p class="muted">{{ book.category?.name || 'No category' }}</p>
+      <div class="stack">
+        <div>
+          <label class="label">Search by title or keyword</label>
+          <input class="input" [(ngModel)]="search" placeholder="For example: Dune">
+        </div>
+
+        <div>
+          <label class="label">Category</label>
+          <select class="select" [(ngModel)]="category">
+            <option value="">All categories</option>
+            <option *ngFor="let item of categories" [value]="item.id">{{ item.name }}</option>
+          </select>
+          <p class="muted tiny-text" *ngIf="categoriesLoading">Loading categories...</p>
+        </div>
+
+        <div>
+          <label class="label">Sort</label>
+          <select class="select" [(ngModel)]="sort">
+            <option value="-created_at">Newest first</option>
+            <option value="title">Title A–Z</option>
+            <option value="-title">Title Z–A</option>
+            <option value="published_year">Oldest year</option>
+            <option value="-published_year">Newest year</option>
+          </select>
+        </div>
       </div>
-      <p>{{ book.description || 'No description.' }}</p>
-      <p class="muted">Rating: {{ book.average_rating || 0 }} · Reviews: {{ book.reviews_count || 0 }}</p>
-      <div>
-        <a class="btn" [routerLink]="['/books', book.id]">Open details</a>
+
+      <div class="filters-actions">
+        <button class="btn" type="button" (click)="applyFilters()">Apply filters</button>
       </div>
-    </article>
-  </div>
+    </aside>
+
+    <div class="stack">
+      <div *ngIf="loading" class="card">Loading books...</div>
+      <div *ngIf="error" class="alert alert-error">{{ error }}</div>
+
+      <div class="catalog-topline" *ngIf="!loading && !error">
+        <p class="muted">{{ books.length }} book{{ books.length === 1 ? '' : 's' }} found</p>
+      </div>
+
+      <div class="grid grid-3" *ngIf="!loading && !error">
+        <article class="card book-card stack" *ngFor="let book of books">
+          <div class="book-card-top">
+            <span class="category-badge">{{ book.category?.name || 'No category' }}</span>
+            <span class="rating-badge">★ {{ book.average_rating || 0 }}</span>
+          </div>
+
+          <div class="stack book-card-copy">
+            <h3>{{ book.title }}</h3>
+            <p class="muted" *ngIf="book.authors?.length">
+              {{ book.authors?.[0]?.full_name || book.authors?.[0]?.name }}
+            </p>
+            <p class="muted" *ngIf="!book.authors?.length">Author information is not available.</p>
+          </div>
+
+          <div class="book-card-footer">
+            <p class="muted">Reviews: {{ book.reviews_count || 0 }}</p>
+            <a class="btn" [routerLink]="['/books', book.id]">Open details</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 </section>

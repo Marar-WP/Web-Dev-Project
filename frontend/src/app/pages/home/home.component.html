@@ -1,9 +1,32 @@
-<section class="card stack">
-  <h1>Welcome to Book Library</h1>
-  <p class="muted">
-    Browse books, open details, create an account and leave reviews.
-  </p>
-  <div>
-    <a routerLink="/books" class="btn">Open books</a>
+<section class="hero card hero-card">
+  <div class="hero-copy stack">
+    <span class="eyebrow">Digital library project</span>
+    <h1>Discover books, read reviews and build your own reading list.</h1>
+    <p class="muted hero-text">
+      A clean full-stack book platform built with Angular and Django REST Framework. Browse titles,
+      explore details, create an account and share your own reviews.
+    </p>
+    <div class="hero-actions">
+      <a routerLink="/books" class="btn">Explore catalog</a>
+      <a routerLink="/register" class="btn secondary">Create account</a>
+    </div>
+  </div>
+
+  <div class="hero-side card surface-card">
+    <div class="surface-tag">Highlights</div>
+    <div class="stack">
+      <div class="feature-row">
+        <strong>Books catalog</strong>
+        <span class="muted">with categories and ratings</span>
+      </div>
+      <div class="feature-row">
+        <strong>User accounts</strong>
+        <span class="muted">register, login and profile</span>
+      </div>
+      <div class="feature-row">
+        <strong>Review system</strong>
+        <span class="muted">one review per user per book</span>
+      </div>
+    </div>
   </div>
 </section>

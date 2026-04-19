@@ -1,8 +1,18 @@
 <div *ngIf="loading" class="card">Loading profile...</div>
-<div *ngIf="error" class="card error">{{ error }}</div>
+<div *ngIf="error" class="alert alert-error">{{ error }}</div>
 
-<section class="card stack" *ngIf="user">
+<section class="card profile-card stack" *ngIf="user">
+  <span class="eyebrow">Reader account</span>
   <h1>Profile</h1>
-  <p><strong>Username:</strong> {{ user.username }}</p>
-  <p><strong>Email:</strong> {{ user.email || 'No email' }}</p>
+
+  <div class="profile-grid">
+    <div class="profile-item">
+      <span class="profile-label">Username</span>
+      <strong>{{ user.username }}</strong>
+    </div>
+    <div class="profile-item">
+      <span class="profile-label">Email</span>
+      <strong>{{ user.email || 'No email provided' }}</strong>
+    </div>
+  </div>
 </section>

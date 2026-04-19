@@ -1,34 +1,56 @@
 <div *ngIf="loading" class="card">Loading book...</div>
-<div *ngIf="error" class="card error">{{ error }}</div>
+<div *ngIf="error" class="alert alert-error">{{ error }}</div>
 
-<section class="stack" *ngIf="!loading && book">
-  <article class="card stack">
-    <div>
-      <h1>{{ book.title }}</h1>
-      <p class="muted">
-        Category: {{ book.category?.name || 'No category' }}
-      </p>
+<section class="stack page-section" *ngIf="!loading && book">
+  <article class="card details-card stack">
+    <div class="details-header">
+      <div>
+        <span class="eyebrow">Book details</span>
+        <h1>{{ book.title }}</h1>
+        <p class="muted">Category: {{ book.category?.name || 'No category' }}</p>
+      </div>
+      <div class="details-metrics">
+        <div class="metric-box">
+          <strong>{{ book.average_rating || 0 }}</strong>
+          <span>Average rating</span>
+        </div>
+        <div class="metric-box">
+          <strong>{{ book.reviews_count || 0 }}</strong>
+          <span>Reviews</span>
+        </div>
+      </div>
     </div>
 
-    <p>{{ book.description || 'No description.' }}</p>
+    <p class="details-description">{{ book.description || 'No description.' }}</p>
 
-    <div>
-      <strong>Authors:</strong>
-      <span *ngIf="book.authors?.length; else noAuthors">
-        <span *ngFor="let author of book.authors; let last = last">
-          {{ author.name }}<span *ngIf="!last">, </span>
-        </span>
-      </span>
-      <ng-template #noAuthors>No authors</ng-template>
+    <div class="details-meta">
+      <div>
+        <strong>Authors</strong>
+        <p class="muted" *ngIf="book.authors?.length; else noAuthors">
+          <span *ngFor="let author of book.authors; let last = last">
+            {{ author.full_name || author.name }}<span *ngIf="!last">, </span>
+          </span>
+        </p>
+        <ng-template #noAuthors>
+          <p class="muted">No authors listed.</p>
+        </ng-template>
+      </div>
+      <div *ngIf="book.year">
+        <strong>Year</strong>
+        <p class="muted">{{ book.year }}</p>
+      </div>
     </div>
-
-    <p class="muted">
-      Average rating: {{ book.average_rating || 0 }} · Reviews: {{ book.reviews_count || 0 }}
-    </p>
   </article>
 
-  <article class="card stack">
-    <h2>Leave a review</h2>
+  <article class="card stack surface-card">
+    <div class="section-head">
+      <div>
+        <h2>Leave a review</h2>
+        <p class="muted">Share your opinion about this book.</p>
+      </div>
+      <span *ngIf="!isAuthenticated" class="mini-note">Login is required</span>
+    </div>
+
     <div class="stack">
       <div>
         <label class="label">Rating</label>
@@ -42,24 +64,32 @@
       </div>
       <div>
         <label class="label">Review text</label>
-        <textarea class="textarea" rows="4" [(ngModel)]="reviewText"></textarea>
+        <textarea class="textarea" rows="4" [(ngModel)]="reviewText" placeholder="Write your short review..."></textarea>
       </div>
       <div>
-        <button class="btn" (click)="submitReview()">Submit review</button>
+        <button class="btn" type="button" (click)="submitReview()">Submit review</button>
       </div>
-      <p *ngIf="reviewMessage" [class.success]="reviewMessage.includes('successfully')" [class.error]="!reviewMessage.includes('successfully')">
+      <div *ngIf="reviewMessage" class="alert" [class.alert-success]="isSuccessMessage" [class.alert-error]="!isSuccessMessage">
         {{ reviewMessage }}
-      </p>
+      </div>
     </div>
   </article>
 
-  <article class="card stack">
-    <h2>Reviews</h2>
+  <article class="card stack surface-card">
+    <div class="section-head">
+      <div>
+        <h2>Reviews</h2>
+        <p class="muted">See what other readers think.</p>
+      </div>
+    </div>
+
     <div *ngIf="!book.reviews?.length" class="muted">No reviews yet.</div>
-    <div class="stack" *ngIf="book.reviews?.length">
-      <div *ngFor="let review of book.reviews" class="card" style="box-shadow:none;border:1px solid #e5e7eb;">
-        <strong>{{ review.username || 'User' }}</strong>
-        <p class="muted">Rating: {{ review.rating }}</p>
+    <div class="stack review-list" *ngIf="book.reviews?.length">
+      <div *ngFor="let review of book.reviews" class="review-item">
+        <div class="review-item-head">
+          <strong>{{ review.username || 'User' }}</strong>
+          <span class="rating-badge">★ {{ review.rating }}</span>
+        </div>
         <p>{{ review.text }}</p>
       </div>
     </div>

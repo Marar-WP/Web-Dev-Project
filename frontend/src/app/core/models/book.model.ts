@@ -1,11 +1,14 @@
 export interface Category {
   id: number;
   name: string;
+  slug?: string;
+  description?: string;
 }
 
 export interface Author {
   id: number;
-  name: string;
+  name?: string;
+  full_name?: string;
   bio?: string;
 }
 
@@ -22,6 +25,7 @@ export interface Book {
   id: number;
   title: string;
   description: string;
+  published_year?: number;
   year?: number;
   category?: Category;
   authors?: Author[];
@@ -29,3 +33,4 @@ export interface Book {
   average_rating?: number;
   reviews_count?: number;
 }
+
