@@ -1,0 +1,1255 @@
+{
+  "info": {
+    "_postman_id": "b7a135b4-c9b8-4849-8313-f42a3d48fa36",
+    "name": "Book Library",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53769296",
+    "_collection_link": "https://go.postman.co/collection/53769296-b7a135b4-c9b8-4849-8313-f42a3d48fa36?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "00-01",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"student_kbtu\",\r\n    \"email\": \"student@kbtu.kz\",\r\n    \"password\": \"strongpassword123\",\r\n    \"password2\": \"strongpassword123\",\r\n    \"first_name\": \"Ivan\",\r\n    \"last_name\": \"Ivanov\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/register/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "00-01",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"student_kbtu\",\r\n    \"email\": \"student@kbtu.kz\",\r\n    \"password\": \"strongpassword123\",\r\n    \"password2\": \"strongpassword123\",\r\n    \"first_name\": \"Ivan\",\r\n    \"last_name\": \"Ivanov\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/users/register/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "users",
+                "register",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 08:23:14 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, POST"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "150"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "csrftoken=QJ3IOxkTaYm2gsznrfYA7bH9lMfO9b7r; expires=Sun, 18 Apr 2027 08:23:14 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sessionid=4q1sftj6owxq03ph324yvr9df9gswicp; expires=Sun, 03 May 2026 08:23:14 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 4,\n    \"username\": \"student_kbtu\",\n    \"email\": \"student@kbtu.kz\",\n    \"first_name\": \"Ivan\",\n    \"last_name\": \"Ivanov\",\n    \"date_joined\": \"2026-04-19T13:23:13.678258+05:00\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "00-02",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"student_kbtu\",\r\n    \"password\": \"strongpassword123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/login/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "00-02",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"student_kbtu\",\r\n    \"password\": \"strongpassword123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/users/login/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "users",
+                "login",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 08:42:32 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "POST, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "150"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "csrftoken=pyuN4HixK9kG8PdUFyZklgRiY3kYxEu9; expires=Sun, 18 Apr 2027 08:42:32 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sessionid=4q1sftj6owxq03ph324yvr9df9gswicp; expires=Sun, 03 May 2026 08:42:32 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 4,\n    \"username\": \"student_kbtu\",\n    \"email\": \"student@kbtu.kz\",\n    \"first_name\": \"Ivan\",\n    \"last_name\": \"Ivanov\",\n    \"date_joined\": \"2026-04-19T13:23:13.678258+05:00\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "00-03",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"student_kbtu\",\r\n    \"password\": \"strongpassword123\"\r\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/me/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "me",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "00-03",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"student_kbtu\",\r\n    \"password\": \"strongpassword123\"\r\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/users/me/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "users",
+                "me",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 08:46:21 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "150"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 4,\n    \"username\": \"student_kbtu\",\n    \"email\": \"student@kbtu.kz\",\n    \"first_name\": \"Ivan\",\n    \"last_name\": \"Ivanov\",\n    \"date_joined\": \"2026-04-19T13:23:13.678258+05:00\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "01-01",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/?search=Мастер&ordering=-created_at",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            ""
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "Мастер",
+              "type": "text"
+            },
+            {
+              "key": "ordering",
+              "value": "-created_at",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "01-01",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/books/?search=Мастер&ordering=-created_at",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Мастер"
+                },
+                {
+                  "key": "ordering",
+                  "value": "-created_at"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 08:48:37 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "552"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 4,\n            \"title\": \"Мастер и Маргарита\",\n            \"category\": {\n                \"id\": 2,\n                \"name\": \"Классика\",\n                \"slug\": \"classic\",\n                \"description\": \"Классическая литература\"\n            },\n            \"authors\": [\n                {\n                    \"id\": 4,\n                    \"first_name\": \"Михаил\",\n                    \"last_name\": \"Булгаков\",\n                    \"full_name\": \"Михаил Булгаков\",\n                    \"bio\": \"Русский писатель, автор \\\"Мастера и Маргариты\\\"\",\n                    \"birth_date\": null,\n                    \"photo\": null\n                }\n            ],\n            \"published_year\": 1967,\n            \"cover\": null,\n            \"average_rating\": 5,\n            \"reviews_count\": 1\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "01-02",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Новая техническая книга\",\r\n    \"description\": \"Описание архитектуры Django + Angular\",\r\n    \"isbn\": \"978-5-1234-5678-9\",\r\n    \"published_year\": 2024,\r\n    \"pages\": 350,\r\n    \"category_id\": 1,\r\n    \"author_ids\": [1]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "01-02",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Новая техническая книга\",\r\n    \"description\": \"Описание архитектуры Django + Angular\",\r\n    \"isbn\": \"978-5-1234-5678-9\",\r\n    \"published_year\": 2024,\r\n    \"pages\": 350,\r\n    \"category_id\": 1,\r\n    \"author_ids\": [1]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/books/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 08:59:13 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "167"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 8,\n    \"title\": \"Новая техническая книга\",\n    \"category\": null,\n    \"authors\": [],\n    \"published_year\": 2024,\n    \"cover\": null,\n    \"average_rating\": null,\n    \"reviews_count\": 0\n}"
+        }
+      ]
+    },
+    {
+      "name": "01-03",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Техническая книга\",\r\n    \"description\": \"Описание архитектуры Django + Angular\",\r\n    \"isbn\": \"978-5-1234-5678-9\",\r\n    \"published_year\": 2024,\r\n    \"pages\": 350,\r\n    \"category_id\": 1,\r\n    \"author_ids\": [1]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/8/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "8",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "01-03",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Техническая книга\",\r\n    \"description\": \"Описание архитектуры Django + Angular\",\r\n    \"isbn\": \"978-5-1234-5678-9\",\r\n    \"published_year\": 2024,\r\n    \"pages\": 350,\r\n    \"category_id\": 1,\r\n    \"author_ids\": [1]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/books/8/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "8",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 09:02:32 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "722"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 8,\n    \"title\": \"Техническая книга\",\n    \"description\": \"Описание архитектуры Django + Angular\",\n    \"isbn\": \"978-5-1234-5678-9\",\n    \"published_year\": 2024,\n    \"pages\": 350,\n    \"cover\": null,\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"Фантастика\",\n        \"slug\": \"fantasy\",\n        \"description\": \"Научная фантастика и фэнтези\"\n    },\n    \"authors\": [\n        {\n            \"id\": 1,\n            \"first_name\": \"Фрэнк\",\n            \"last_name\": \"Герберт\",\n            \"full_name\": \"Фрэнк Герберт\",\n            \"bio\": \"Американский писатель-фантаст, автор \\\"Дюны\\\"\",\n            \"birth_date\": null,\n            \"photo\": null\n        }\n    ],\n    \"reviews\": [],\n    \"average_rating\": null,\n    \"reviews_count\": 0,\n    \"created_at\": \"2026-04-19T13:59:13.759496+05:00\",\n    \"updated_at\": \"2026-04-19T14:02:31.932324+05:00\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "01-04",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/8/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "8",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "01-04",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/books/8/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "8",
+                ""
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 09:05:22 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "02-01",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rating\": 5,\r\n    \"text\": \"Отличная книга!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/7/reviews/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "7",
+            "reviews",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "02-01",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"rating\": 5,\r\n    \"text\": \"Отличная книга!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/books/7/reviews/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "7",
+                "reviews",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 09:07:43 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "149"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 6,\n    \"book\": 7,\n    \"user\": 4,\n    \"username\": \"student_kbtu\",\n    \"rating\": 5,\n    \"text\": \"Отличная книга!\",\n    \"created_at\": \"2026-04-19T14:07:43.906200+05:00\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "02-02",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/top-rated/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "top-rated",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "02-02",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/books/top-rated/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "top-rated",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 09:08:46 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2042"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 7,\n        \"title\": \"Преступление и наказание\",\n        \"category\": null,\n        \"authors\": [],\n        \"published_year\": 1866,\n        \"cover\": null,\n        \"average_rating\": 5,\n        \"reviews_count\": 1\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Мастер и Маргарита\",\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"Классика\",\n            \"slug\": \"classic\",\n            \"description\": \"Классическая литература\"\n        },\n        \"authors\": [\n            {\n                \"id\": 4,\n                \"first_name\": \"Михаил\",\n                \"last_name\": \"Булгаков\",\n                \"full_name\": \"Михаил Булгаков\",\n                \"bio\": \"Русский писатель, автор \\\"Мастера и Маргариты\\\"\",\n                \"birth_date\": null,\n                \"photo\": null\n            }\n        ],\n        \"published_year\": 1967,\n        \"cover\": null,\n        \"average_rating\": 5,\n        \"reviews_count\": 1\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Убийство в «Восточном экспрессе»\",\n        \"category\": {\n            \"id\": 3,\n            \"name\": \"Детектив\",\n            \"slug\": \"detective\",\n            \"description\": \"Детективы и триллеры\"\n        },\n        \"authors\": [\n            {\n                \"id\": 3,\n                \"first_name\": \"Агата\",\n                \"last_name\": \"Кристи\",\n                \"full_name\": \"Агата Кристи\",\n                \"bio\": \"Королева детектива\",\n                \"birth_date\": null,\n                \"photo\": null\n            }\n        ],\n        \"published_year\": 1934,\n        \"cover\": null,\n        \"average_rating\": 5,\n        \"reviews_count\": 1\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Война и мир\",\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"Классика\",\n            \"slug\": \"classic\",\n            \"description\": \"Классическая литература\"\n        },\n        \"authors\": [\n            {\n                \"id\": 2,\n                \"first_name\": \"Лев\",\n                \"last_name\": \"Толстой\",\n                \"full_name\": \"Лев Толстой\",\n                \"bio\": \"Великий русский писатель\",\n                \"birth_date\": null,\n                \"photo\": null\n            }\n        ],\n        \"published_year\": 1869,\n        \"cover\": null,\n        \"average_rating\": 5,\n        \"reviews_count\": 1\n    },\n    {\n        \"id\": 1,\n        \"title\": \"Дюна\",\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Фантастика\",\n            \"slug\": \"fantasy\",\n            \"description\": \"Научная фантастика и фэнтези\"\n        },\n        \"authors\": [\n            {\n                \"id\": 1,\n                \"first_name\": \"Фрэнк\",\n                \"last_name\": \"Герберт\",\n                \"full_name\": \"Фрэнк Герберт\",\n                \"bio\": \"Американский писатель-фантаст, автор \\\"Дюны\\\"\",\n                \"birth_date\": null,\n                \"photo\": null\n            }\n        ],\n        \"published_year\": 1965,\n        \"cover\": null,\n        \"average_rating\": 4.5,\n        \"reviews_count\": 2\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "03-01",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Programming\",\r\n    \"slug\": \"programming\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/categories/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "categories",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "03-01",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Programming\",\r\n    \"slug\": \"programming\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/books/categories/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "categories",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 09:12:37 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "67"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 5,\n    \"name\": \"Programming\",\n    \"slug\": \"programming\",\n    \"description\": \"\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "03-02",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"first_name\": \"Рэй\",\r\n    \"last_name\": \"Брэдбери\",\r\n    \"bio\": \"Американский писатель-фантаст, автор романа «451 градус по Фаренгейту» и «Марсианских хроник».\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/authors/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "authors",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "03-02",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"first_name\": \"Рэй\",\r\n    \"last_name\": \"Брэдбери\",\r\n    \"bio\": \"Американский писатель-фантаст, автор романа «451 градус по Фаренгейту» и «Марсианских хроник».\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/books/authors/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "authors",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 19 Apr 2026 09:16:57 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.13.0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "311"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 5,\n    \"first_name\": \"Рэй\",\n    \"last_name\": \"Брэдбери\",\n    \"full_name\": \"Рэй Брэдбери\",\n    \"bio\": \"Американский писатель-фантаст, автор романа «451 градус по Фаренгейту» и «Марсианских хроник».\",\n    \"birth_date\": null,\n    \"photo\": null\n}"
+        }
+      ]
+    }
+  ]
+}
