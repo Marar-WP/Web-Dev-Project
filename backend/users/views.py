@@ -1,14 +1,3 @@
-"""
-=============================================================
-  АУТЕНТИФИКАЦИЯ ПОЛЬЗОВАТЕЛЕЙ — users/views.py
-=============================================================
-
-Здесь реализуем:
-  POST /api/users/register/  — регистрация
-  POST /api/users/login/     — вход
-  POST /api/users/logout/    — выход
-  GET  /api/users/me/        — профиль текущего пользователя
-"""
 
 from rest_framework import status, permissions
 from rest_framework.decorators import api_view, permission_classes
