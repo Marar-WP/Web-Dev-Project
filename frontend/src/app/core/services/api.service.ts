@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { Book, Category, Review } from '../models/book.model';
 import { User } from '../models/user.model';
 
@@ -16,6 +16,11 @@ interface PaginatedCategoriesResponse {
   next: string | null;
   previous: string | null;
   results: Category[];
+}
+
+interface TokenResponse {
+  access: string;
+  refresh: string;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -66,24 +71,43 @@ export class ApiService {
   }
 
   addReview(bookId: string | number, payload: { rating: number; text: string }): Observable<Review> {
-    return this.http.post<Review>(`${this.baseUrl}/books/${bookId}/reviews/`, payload, {
-      withCredentials: true,
-    });
+    return this.http.post<Review>(`${this.baseUrl}/books/${bookId}/reviews/`, payload);
   }
 
-  register(payload: { username: string; email: string; password: string; password2: string }): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/users/register/`, payload, { withCredentials: true });
+  register(payload: {
+    username: string;
+    email: string;
+    password: string;
+    password2: string;
+  }): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/users/register/`, payload);
   }
 
-  login(payload: { username: string; password: string }): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/users/login/`, payload, { withCredentials: true });
+  login(payload: { username: string; password: string }): Observable<TokenResponse> {
+    return this.http.post<TokenResponse>(`${this.baseUrl}/token/`, payload).pipe(
+      tap((tokens) => {
+        localStorage.setItem('access', tokens.access);
+        localStorage.setItem('refresh', tokens.refresh);
+      })
+    );
   }
 
   logout(): Observable<unknown> {
-    return this.http.get(`${this.baseUrl}/users/logout/`, { withCredentials: true });
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+    return this.http.post(`${this.baseUrl}/users/logout/`, {});
   }
 
   me(): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}/users/me/`, { withCredentials: true });
+    return this.http.get<User>(`${this.baseUrl}/users/me/`);
+  }
+
+  refreshToken(): Observable<{ access: string }> {
+    const refresh = localStorage.getItem('refresh') || '';
+    return this.http.post<{ access: string }>(`${this.baseUrl}/token/refresh/`, { refresh }).pipe(
+      tap((tokens) => {
+        localStorage.setItem('access', tokens.access);
+      })
+    );
   }
 }

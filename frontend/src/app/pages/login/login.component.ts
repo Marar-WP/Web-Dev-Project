@@ -21,18 +21,26 @@ export class LoginPageComponent {
   message = '';
 
   submit(): void {
-    this.message = '';
-    this.api.login({
-      username: this.username,
-      password: this.password
-    }).subscribe({
-      next: (user) => {
-        this.authState.setUser(user);
-        this.router.navigateByUrl('/profile');
-      },
-      error: (error) => {
-        this.message = error?.error?.detail || 'Login failed. Please check your credentials.';
-      }
-    });
-  }
+  this.message = '';
+
+  this.api.login({
+    username: this.username,
+    password: this.password
+  }).subscribe({
+    next: () => {
+      this.api.me().subscribe({
+        next: (user) => {
+          this.authState.setUser(user);
+          this.router.navigateByUrl('/profile');
+        },
+        error: () => {
+          this.message = 'Login succeeded, but profile could not be loaded.';
+        }
+      });
+    },
+    error: (error) => {
+      this.message = error?.error?.detail || 'Login failed. Please check your credentials.';
+    }
+  });
+}
 }

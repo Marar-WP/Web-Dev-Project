@@ -36,9 +36,10 @@ export class RegisterPageComponent {
       password: this.password,
       password2: this.password2
     }).subscribe({
-      next: (user) => {
-        this.authState.setUser(user);
-        this.router.navigateByUrl('/profile');
+      next: () => {
+        this.authState.setUser(null);
+        this.message = 'Registration successful. Please log in.';
+        this.router.navigateByUrl('/login');
       },
       error: (error) => {
         const firstError = error?.error ? JSON.stringify(error.error) : '';
